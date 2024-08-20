@@ -1,0 +1,16 @@
+<!--<h1>{{title}}</h1>-->
+<div style = "height:100%; overflow-y: hidden">
+    <split id='splitterHorizontal' direction='vertical' gutterSize='8'
+                        (dragProgress)='dragBetweenTables()'
+                        (dragStart)='dragStart()'
+                        (dragEnd)='dragEnd()'>   
+        <split-area id='topTable' [size]='50'>             
+            <me-comps #topTable (componentChanged)="componentChanged($event)" [rowId]="selectedRow" [componentId]="componentId"></me-comps>
+        </split-area>
+        <split-area id='bottomTable' [size]='50'>           
+            <me-compscv #bottomTable (selectedRowChanged)="selecteRowChanged($event)"></me-compscv>
+        </split-area>
+    </split>
+</div>
+     
+
